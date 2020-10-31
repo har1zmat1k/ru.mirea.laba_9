@@ -27,17 +27,18 @@ public class LabClassUI {
             if(name.length() == 0){
                 throw new EmptyStringException("Пустоя строка");
             }
-//          name = "Иван";
             System.out.println("Фамилия: ");
             surname = cin.nextLine();
             if(surname.length() == 0){
                 throw new EmptyStringException("Пустоя строка");
             }
-//          surname = "Иванов";
         }catch (EmptyStringException err){
             System.out.println("Пустоя строка");
         }
+        findStudent(name, surname, students);        //Поиск студента
+    }
 
+    private static void findStudent(String name, String surname, Student [] students){
         boolean studentFunded = true;
         for (Student student : students) {
             if (student.getFirstName().equals(name) && student.getLastName().equals(surname)) {
